@@ -1,0 +1,7 @@
+package com.lheredia.springDemo.resources;
+
+public class TesteRes {
+// resource é o que cria a url de consulta/postagem.
+	
+	
+}

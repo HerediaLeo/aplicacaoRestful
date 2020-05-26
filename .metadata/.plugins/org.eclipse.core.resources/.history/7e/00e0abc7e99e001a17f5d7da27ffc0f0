@@ -1,0 +1,6 @@
+package com.lheredia.springDemo.resources;
+
+
+public class ClienteRes {
+
+}

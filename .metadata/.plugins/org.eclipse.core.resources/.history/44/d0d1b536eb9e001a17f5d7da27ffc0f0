@@ -1,0 +1,36 @@
+package com.lheredia.springDemo.resources;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.lheredia.springDemo.repository.ClienteRepo;
+
+@RestController
+@RequestMapping("/cliente")
+public class ClienteRes {
+
+	
+	@Autowired
+	ClienteRepo repo;
+	
+	@RequestMapping("/findAll")
+	public ResponseEntity<?> findAll(){
+		try {
+			return ResponseEntity.status(HttpStatus.OK).body(repo.findAll());
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+	
+	@RequestMapping("/findById/{id}")
+	public ResponseEntity<?> findById(Long id){
+		try {
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

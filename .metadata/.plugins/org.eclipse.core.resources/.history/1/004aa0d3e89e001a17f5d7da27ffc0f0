@@ -1,0 +1,14 @@
+package Model;
+
+public class Cliente {
+
+	private Long id;	
+	private String nome;	
+	private String endereco;
+	private int idade;	
+
+	
+	
+}
+
+

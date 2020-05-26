@@ -1,0 +1,5 @@
+package com.lheredia.springDemo.repository;
+
+public class ClienteRepo {
+
+}
