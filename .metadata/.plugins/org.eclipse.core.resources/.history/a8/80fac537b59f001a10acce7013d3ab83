@@ -1,0 +1,30 @@
+package com.lheredia.springDemo.repository;
+
+import javax.transaction.Transactional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.lheredia.springDemo.model.Cliente;
+
+/* 
+ * Esta anotação(@Repository) é apenas uma wrapper para @Component,
+ * que diz ao Spring Boot que essa classe deve estar disponível para ser injetada
+ * 
+ * */
+
+@Repository 
+@Transactional
+public interface ClienteRepo extends JpaRepository<Cliente, Long>{
+	/* 
+	 * A interface deve estender JpaRepository, nela devemos informar qual é 
+	 * a entidade quer será persistida e qual o tipo do id da entidade. 	 * 
+	 * 
+	 * */
+	
+	@Query(value = "SELECT * FROM CLIENTE WHERE C.NOME LIKE %?1", nativeQuery = true)
+	public Cliente findByName(String nome);
+	
+
+}

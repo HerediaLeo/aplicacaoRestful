@@ -39,6 +39,17 @@ public class ClienteRes {
 		}
 	}
 	
+	@RequestMapping("/findByName/{nome}")
+	public ResponseEntity<?> findByName(@PathVariable String nome){
+		try {
+			return ResponseEntity.status(HttpStatus.OK).body(repo.findByName(nome));
+		} catch (Exception e) {
+			throw e;
+		}	
+		
+	}
+	
+	
 	@PostMapping("/saveCliente")
 	public Cliente save(@RequestBody Cliente c) {
 		try {										
